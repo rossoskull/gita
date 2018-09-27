@@ -14,14 +14,14 @@ const Navbar = () => {
     return(
         <header>
             <nav className='blue'>
-                <div class="nav-wrapper container">
-                    <a href="/" class="brand-logo">Bhagwada Gita</a>
-                    <a href="" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
-                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <div className="nav-wrapper container">
+                    <a href="/" className="brand-logo">Bhagwada Gita</a>
+                    <a href="" data-target="mobile-demo" className="sidenav-trigger right"><i className="material-icons">menu</i></a>
+                    <ul id="nav-mobile" className="right hide-on-med-and-down">
                         {menuItems}
                     </ul>
                 </div>
-                <ul class="sidenav" id="mobile-demo">
+                <ul className="sidenav" id="mobile-demo">
                     {menuItems}
                 </ul>
             </nav>
