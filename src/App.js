@@ -19,7 +19,6 @@ class App extends Component {
     }
     fetch(url, options)
     .then((res) => {
-      console.log('Hello');
       console.log(res);
       if (res.ok) {
         res.json().then((data) => {
@@ -43,9 +42,8 @@ class App extends Component {
         <div>
           <Navbar />
           <main className='container'>
-            <Route exact path='/' component={Home} />
+            <Route exact path='/' render={(props) => <Home {...props} acc_token={this.state.acc_token} />} />
           </main>
-          {this.state.acc_token}
         </div>
       </BrowserRouter>
     );

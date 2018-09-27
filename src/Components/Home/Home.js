@@ -2,13 +2,18 @@ import React, { Component } from 'react';
 
 class Home extends Component {
     state = {
-        name: "Jay"
+        acc_token: "",
     }
+
+    componentWillReceiveProps(newprops) {
+        this.setState({
+            acc_token: newprops.acc_token,
+        })
+    } 
 
     render() {
         return(
             <div>
-                {this.state.name}                
             </div>
         );
     }
