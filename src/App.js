@@ -11,28 +11,51 @@ class App extends Component {
     super(props);
     this.state = {
       acc_token: '',
+      chapters: [],
     }
-    const scope = this;
     const url = 'http://gita-backend.glitch.me/get_token';
     const options = {
       mode: 'cors',
     }
     fetch(url, options)
     .then((res) => {
-      console.log(res);
       if (res.ok) {
         res.json().then((data) => {
-          scope.setState({
+          this.setState({
             acc_token: data.access_token,
-          })
+          });
+          this.getChapters(data.access_token);
         });
       } else {
         console.log('Error occured. Try again later.');
       }
     })
     .catch((err) => {
-      alert('Big error');
       console.log(err);
+    });
+  }
+
+  // Get chapters
+  getChapters = (token) => {
+    const url = `https://bhagavadgita.io/api/v1/chapters?access_token=${token}`;
+    const options = {
+        'mode': 'cors',
+    }
+    fetch(url, options)
+    .then((res) => {
+        if(res.ok) {
+             res.json().then((data) => {
+                this.setState({
+                    chapters: data,
+                });
+                return;
+             });
+        } else {
+            console.log('Error in retrieving chapters');
+        }
+    })
+    .catch((err) => {
+        console.log('Chapters error', err);
     });
   }
 
@@ -42,7 +65,7 @@ class App extends Component {
         <div>
           <Navbar />
           <main className='container'>
-            <Route exact path='/' render={(props) => <Home {...props} acc_token={this.state.acc_token} />} />
+            <Route exact path='/' render={(props) => <Home {...props} chapters={this.state.chapters}/>} />
           </main>
         </div>
       </BrowserRouter>
