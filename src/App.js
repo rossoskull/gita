@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Navbar from './Components/Navbar/Navbar';
 import Home from './Components/Home/Home';
+import Loader from './Components/Loader/Loader';
 
 class App extends Component {
 
@@ -65,8 +66,9 @@ class App extends Component {
         <div>
           <Navbar />
           <main className='container'>
-            <Route exact path='/' render={(props) => <Home {...props} chapters={this.state.chapters}/>} />
+            <Route exact path='/gita/' render={(props) => <Home {...props} chapters={this.state.chapters}/>} />
           </main>
+          <Loader nChapters={this.state.chapters.length} />
         </div>
       </BrowserRouter>
     );

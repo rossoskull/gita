@@ -24,7 +24,7 @@ const Home = ({chapters}) => {
     });
 
     return(
-        <div className="row">
+        <div className="row home-container">
             {ChData}
         </div>
     );
