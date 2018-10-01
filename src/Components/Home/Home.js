@@ -14,6 +14,7 @@ const Home = ({chapters}) => {
                 <a href={"#"+chId} class="modal-trigger" >
                     <div className="card home-card blue darken-1 waves-effect waves-light">
                         <div className="card-content white-text">
+                            <p className="chapter-number">Chapter {chapter.chapter_number}</p>
                             <span className="card-title">
                                 {chapter.name} - 
                                 {chapter.name_transliterated}

@@ -3,7 +3,7 @@ import React from 'react';
 const Loader = ({nChapters}) => {
     const preloaderStyle = {
         backgroundColor: 'rgba(0,0,0,0)',
-        margin: '24.5% 48%',
+        margin: '24% 45%'
     };
 
     return(
