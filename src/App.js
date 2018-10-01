@@ -49,6 +49,11 @@ class App extends Component {
                 this.setState({
                     chapters: data,
                 });
+                const script = document.createElement('script');
+                script.innerHTML = `
+                    $('.modal').modal(); 
+                `;
+                document.body.appendChild(script);
                 return;
              });
         } else {
