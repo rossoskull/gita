@@ -7,8 +7,8 @@ const Chapter = ({chapter, chId}) => {
 
     return(
         <div>
-            <div id={chId} style={{maxHeight:'80%', height: '80%',}} class="modal blue modal-fixed-footer">
-                <div class="modal-content white-text">
+            <div id={chId} style={{maxHeight:'80%', height: '80%',}} className="modal blue modal-fixed-footer">
+                <div className="modal-content white-text">
                 <h6 style={hStyle}>Chapter {chapter.chapter_number}.</h6>
                 <h3 style={hStyle}>{chapter.name}</h3>
                 <h5 style={hStyle}>{chapter.name_transliterated} - {chapter.name_translation}</h5>
@@ -16,8 +16,8 @@ const Chapter = ({chapter, chId}) => {
                 <h6>Summary : </h6>
                 <p>{chapter.chapter_summary}</p>
                 </div>
-                <div class="modal-footer">
-                <a href="#!" class="modal-close waves-effect waves-blue btn-flat">Close</a>
+                <div className="modal-footer">
+                <a href="#!" className="modal-close waves-effect waves-blue btn-flat">Close</a>
                 </div>
             </div>
         </div>

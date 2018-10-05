@@ -11,7 +11,7 @@ const Home = ({chapters}) => {
         const chId = `ch-${chapter.chapter_number}`;
         return(
             <div className="col s12 m6">
-                <a href={"#"+chId} class="modal-trigger" >
+                <a href={"#"+chId} className="modal-trigger" >
                     <div className="card home-card blue darken-1 waves-effect waves-light">
                         <div className="card-content white-text">
                             <p className="chapter-number">Chapter {chapter.chapter_number}</p>

@@ -72,6 +72,8 @@ class App extends Component {
           <Navbar />
           <main className='container'>
             <Route exact path='/gita/' render={(props) => <Home {...props} chapters={this.state.chapters}/>} />
+            <Route exact path='/gita/about' render={(props) => <h2>about</h2>} />
+            <Route exact path='/gita/source' render={(props) => <h2>Sources</h2>} />
           </main>
           <Loader nChapters={this.state.chapters.length} />
         </div>
