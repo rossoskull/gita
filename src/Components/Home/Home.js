@@ -2,10 +2,20 @@ import React from 'react';
 import './Home.css';
 import Chapter from '../Chapter/Chapter';
 
-const Home = ({chapters}) => {
+const Home = ({chapters, currentPage, updatePage}) => {
     const chToView = chapters.filter((chapter) => {
         return true;
     });
+
+    const enableModal = () => {
+        const script = document.createElement('script');
+        script.innerHTML = `
+            $('.modal').modal(); 
+        `;
+        document.body.appendChild(script);
+        console.log('Hello Hello Hello Hello Hello Hello ')
+        updatePage('home');
+    }
 
     const ChData = chToView.map((chapter) => {
         const chId = `ch-${chapter.chapter_number}`;
@@ -33,6 +43,7 @@ const Home = ({chapters}) => {
     return(
         <div className="row home-container">
             {ChData}
+            {(currentPage !== 'home')? enableModal() : console.log('Updated')}
         </div>
     );
 }

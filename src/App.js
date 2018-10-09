@@ -3,21 +3,22 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import Navbar from './Components/Navbar/Navbar';
 import Home from './Components/Home/Home';
 import Loader from './Components/Loader/Loader';
+import Verses from './Components/Verses/Verses';
 
 class App extends Component {
-
-  
-
   constructor(props) {
     super(props);
     this.state = {
       acc_token: '',
       chapters: [],
+      currentPage: '',
+      verses: [],
     }
     const url = 'http://gita-backend.glitch.me/get_token';
     const options = {
       mode: 'cors',
     }
+    
     fetch(url, options)
     .then((res) => {
       if (res.ok) {
@@ -36,7 +37,13 @@ class App extends Component {
     });
   }
 
-  // Get chapters
+  updatePage = (page) => {
+    this.setState({
+      currentPage: page,
+    })
+  }
+
+  // Get chapters And verses
   getChapters = (token) => {
     const url = `https://bhagavadgita.io/api/v1/chapters?access_token=${token}`;
     const options = {
@@ -65,15 +72,20 @@ class App extends Component {
     });
   }
 
+  updateVerses = () => {
+    console.log('Hello');
+  }
+
   render() {
     return (
       <BrowserRouter>
         <div>
           <Navbar />
           <main className='container'>
-            <Route exact path='/gita/' render={(props) => <Home {...props} chapters={this.state.chapters}/>} />
+            <Route exact path='/gita/' render={(props) => <Home {...props} updatePage={this.updatePage} chapters={this.state.chapters} currentPage={this.state.currentPage}/>} />
             <Route exact path='/gita/about' render={(props) => <h2>about</h2>} />
             <Route exact path='/gita/source' render={(props) => <h2>Sources</h2>} />
+            <Route exact path='/gita/verses/:ch' render={(props) => <Verses updateVerses={this.updateVerses} {...props} verses={this.state.verses} />} />
           </main>
           <Loader nChapters={this.state.chapters.length} />
         </div>

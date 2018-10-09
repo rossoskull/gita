@@ -1,30 +1,40 @@
-import React from 'react';
-import './Navbar.css';
+import React, { Fragment } from 'react';
 import { NavLink } from 'react-router-dom';
+import { AppBar, Toolbar, Typography, Button } from '@material-ui/core'
+import './Navbar.css';
 
 const Navbar = () => {
+
+    const styles = {
+        button: {
+            marginRight: '7px'
+        }
+    }
+
     const menuItems = (
-        <div>
-            <li><NavLink exact className='waves-effect' to="/gita/">Home</NavLink></li>
-            <li><NavLink className='waves-effect' to="/gita/about">About</NavLink></li>
-            <li><NavLink className='waves-effect' to="/gita/source">Source</NavLink></li>
+        <div style={{ marginLeft: 'auto' }}>
+            <Button color='inherit' size='large' style={styles.button} component={NavLink} exact to="/gita/">Home</Button>
+            <Button color='inherit' size='large' style={styles.button} component={NavLink} to="/gita/about">About</Button>
+            <Button color='inherit' size='large' style={styles.button} component={NavLink} to="/gita/source">Source</Button>
         </div>
     );
 
     return(
         <header>
-            <nav className='blue'>
-                <div className="nav-wrapper container">
-                    <a href="/gita/" className="brand-logo">Bhagwada Gita</a>
-                    <a href="#" data-target="mobile-demo" className="sidenav-trigger right"><i className="material-icons">menu</i></a>
-                    <ul id="nav-mobile" className="right hide-on-med-and-down">
-                        {menuItems}
-                    </ul>
-                </div>
-                <ul className="sidenav" id="mobile-demo">
+            <AppBar
+                position='sticky'
+                style={{
+                    backgroundColor: '#2196f3',
+                    marginBottom: '20px'
+                }}
+                >
+                <Toolbar>
+                    <Typography variant='h6' color='inherit'>
+                        Bhagvada Gita App
+                    </Typography>
                     {menuItems}
-                </ul>
-            </nav>
+                </Toolbar>
+            </AppBar>
         </header>
     );
 };
