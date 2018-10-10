@@ -1,50 +1,61 @@
 import React from 'react';
 import './Home.css';
-import Chapter from '../Chapter/Chapter';
+import { Card, CardContent, CardActionArea, Grid, Typography } from '@material-ui/core'
+import { Link } from 'react-router-dom';
 
-const Home = ({chapters, currentPage, updatePage}) => {
-    const chToView = chapters.filter((chapter) => {
-        return true;
-    });
+const Home = ({chapters}) => {
 
-    const enableModal = () => {
-        const script = document.createElement('script');
-        script.innerHTML = `
-            $('.modal').modal(); 
-        `;
-        document.body.appendChild(script);
-        console.log('Hello Hello Hello Hello Hello Hello ')
-        updatePage('home');
-    }
-
-    const ChData = chToView.map((chapter) => {
-        const chId = `ch-${chapter.chapter_number}`;
+    const ChData = chapters.map((chapter) => {
         return(
-            <div className="col s12 m6">
-                <a href={"#"+chId} className="modal-trigger" >
-                    <div className="card home-card blue darken-1 waves-effect waves-light">
-                        <div className="card-content white-text">
-                            <p className="chapter-number">Chapter {chapter.chapter_number}</p>
-                            <span className="card-title">
-                                {chapter.name} - 
-                                {chapter.name_transliterated}
-                            </span>
-                            <p><b>{chapter.name_meaning}</b></p>
-                            <p>{chapter.chapter_summary.substr(0, 180)}...</p>
-                            <br />
-                        </div>
-                    </div>
-                </a>
-                <Chapter chapter={chapter} chId={chId} />
-            </div>
+            <Grid item xs='12' md='6' >
+                <Card 
+                raised={true} 
+                style={{ 
+                    backgroundColor: '#2196f3', 
+                    height: '270px',
+                    color: '#FFF'
+                }}
+                >
+                    <CardActionArea 
+                        component={Link} 
+                        to={`/gita/verses/${chapter.chapter_number}`} 
+                        style={{height: '100%'}}
+                    >
+                        <CardContent>
+
+                                <Typography 
+                                    color='inherit' 
+                                    variance='caption' 
+                                    className="chapter-number"
+                                >
+                                    Chapter {chapter.chapter_number}
+                                </Typography>
+
+                                <Typography color='inherit' style={{textAlign: 'center'}} variant='display1'>
+                                    {chapter.name}<br />
+                                    {chapter.name_transliterated}
+                                </Typography>
+
+                                <Typography 
+                                color='inherit' 
+                                style={{textAlign: 'center'}}
+                                >
+                                    <b>{chapter.name_meaning}</b>
+                                </Typography>
+
+                                <p>{chapter.chapter_summary.substr(0, 180)}...</p>
+                                <br />
+                        </CardContent>
+                    </CardActionArea>
+                </Card>
+            </Grid>
         )
     });
 
     return(
-        <div className="row home-container">
+        <Grid container spacing={16}>
             {ChData}
-            {(currentPage !== 'home')? enableModal() : console.log('Updated')}
-        </div>
+        </Grid>
     );
 }
 

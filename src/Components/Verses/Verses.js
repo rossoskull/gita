@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 
 class Verses extends Component {
-    
-
-
     render() {
         return(
             <div>

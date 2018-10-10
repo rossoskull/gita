@@ -8,7 +8,7 @@ const Chapter = ({chapter, chId}) => {
 
     return(
         <div>
-            <div id={chId} style={{maxHeight:'80%', height: '80%',}} className="modal open blue modal-fixed-footer">
+            {/* <div id={chId} style={{maxHeight:'80%', height: '80%',}} className="modal open blue modal-fixed-footer">
                 <div className="modal-content white-text">
                 <h6 style={hStyle}>Chapter {chapter.chapter_number}.</h6>
                 <h3 style={hStyle}>{chapter.name}</h3>
@@ -21,7 +21,8 @@ const Chapter = ({chapter, chId}) => {
                 <NavLink to={`/gita/verses/${chapter.chapter_number}`} className='waves-effect waves-green btn-flat'>Read More</NavLink>
                 <a href="#!" className="modal-close waves-effect waves-blue btn-flat">Close</a>
                 </div>
-            </div>
+            </div> */}
+            <h3>Hello</h3>
         </div>
     );
 };

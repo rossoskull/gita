@@ -1,5 +1,5 @@
-import React, { Fragment } from 'react';
-import { NavLink } from 'react-router-dom';
+import React from 'react';
+import { NavLink, Link } from 'react-router-dom';
 import { AppBar, Toolbar, Typography, Button } from '@material-ui/core'
 import './Navbar.css';
 
@@ -29,7 +29,7 @@ const Navbar = () => {
                 }}
                 >
                 <Toolbar>
-                    <Typography variant='h6' color='inherit'>
+                    <Typography component={Link} to='/gita' variant='h6' color='inherit'>
                         Bhagvada Gita App
                     </Typography>
                     {menuItems}
