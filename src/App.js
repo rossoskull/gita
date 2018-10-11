@@ -45,10 +45,13 @@ class App extends Component {
 
   // Get chapters And verses
   getChapters = (token) => {
-    const url = `https://bhagavadgita.io/api/v1/chapters?access_token=${token}`;
+    const baseUrl = 'https://bhagavadgita.io/api/v1/';
+    let url = `${baseUrl}chapters?access_token=${token}`;
     const options = {
         'mode': 'cors',
     }
+
+    // Fetch Chapters
     fetch(url, options)
     .then((res) => {
         if(res.ok) {
@@ -56,11 +59,6 @@ class App extends Component {
                 this.setState({
                     chapters: data,
                 });
-                const script = document.createElement('script');
-                script.innerHTML = `
-                    $('.modal').modal(); 
-                `;
-                document.body.appendChild(script);
                 return;
              });
         } else {
@@ -72,10 +70,6 @@ class App extends Component {
     });
   }
 
-  updateVerses = () => {
-    console.log('Hello');
-  }
-
   render() {
     return (
       <BrowserRouter>
@@ -85,7 +79,7 @@ class App extends Component {
             <Route exact path='/gita/' render={(props) => <Home {...props} updatePage={this.updatePage} chapters={this.state.chapters} currentPage={this.state.currentPage}/>} />
             <Route exact path='/gita/about' render={(props) => <h2>about</h2>} />
             <Route exact path='/gita/source' render={(props) => <h2>Sources</h2>} />
-            <Route exact path='/gita/verses/:ch' render={(props) => <Verses updateVerses={this.updateVerses} {...props} verses={this.state.verses} />} />
+            <Route exact path='/gita/verses/:ch' render={(props) => <Verses {...props} chapters={this.state.chapters} ch={props.match.params.ch} acc_token={this.state.acc_token}/>} />
           </main>
           <Loader nChapters={this.state.chapters.length} />
         </div>
