@@ -1,42 +1,84 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import { AppBar, Toolbar, Typography, Button } from '@material-ui/core'
+import { IconButton, AppBar, Toolbar, Typography, Button, Drawer, Divider, List, ListItem, ListItemText } from '@material-ui/core'
+import { Menu } from '@material-ui/icons'
 import './Navbar.css';
 
-const Navbar = () => {
-
-    const styles = {
-        button: {
-            marginRight: '7px'
-        }
+class Navbar extends Component {
+    
+    state = {
+        openDrawer: false
     }
 
-    const menuItems = (
-        <div style={{ marginLeft: 'auto' }}>
-            <Button color='inherit' size='large' style={styles.button} component={NavLink} exact to="/gita/">Home</Button>
-            <Button color='inherit' size='large' style={styles.button} component={NavLink} to="/gita/about">About</Button>
-            <Button color='inherit' size='large' style={styles.button} component={NavLink} to="/gita/source">Source</Button>
-        </div>
-    );
+    handleDrawerClose = () => {
+        this.setState({ openDrawer: false });
+    }
 
-    return(
-        <header>
-            <AppBar
-                position='sticky'
-                style={{
-                    backgroundColor: '#2196f3',
-                    marginBottom: '20px'
-                }}
-                >
-                <Toolbar>
-                    <Typography component={Link} to='/gita' variant='h6' color='inherit'>
-                        Bhagvada Gita App
-                    </Typography>
-                    {menuItems}
-                </Toolbar>
-            </AppBar>
-        </header>
-    );
+    handleDrawerOpen = () => {
+        this.setState({ openDrawer: true });
+    }
+    
+    render() {
+        const styles = {
+            button: {
+                marginRight: '7px'
+            }
+        }
+
+        const menuItems = (
+            <div id='menuItems' style={{ marginLeft: 'auto' }}>
+                <Button color='inherit' size='large' style={styles.button} component={NavLink} exact to="/gita/">Home</Button>
+                <Button color='inherit' size='large' style={styles.button} component={NavLink} to="/gita/about">About</Button>
+                <Button color='inherit' size='large' style={styles.button} component={NavLink} to="/gita/source">Source</Button>
+            </div>
+        );
+
+        return(
+            <header>
+                <AppBar
+                    position='sticky'
+                    style={{
+                        backgroundColor: '#2196f3',
+                        marginBottom: '20px'
+                    }}
+                    >
+                    <Toolbar>
+                        <IconButton id='burger' onClick={this.handleDrawerOpen}>
+                            <Menu style={{color: 'white'}} />
+                        </IconButton>
+                        <Typography component={Link} to='/gita' variant='headline' color='inherit'>
+                            Bhagvada Gita App
+                        </Typography>
+                        {menuItems}
+                    </Toolbar>
+                </AppBar>
+                <Drawer open={this.state.openDrawer} onClose={this.handleDrawerClose}>
+                    <div
+                        role="button"
+                        onClick={this.handleDrawerClose}
+                        onKeyDown={this.handleDrawerClose}                        
+                    >
+                        <List style={{width: '280px'}}>
+                            <ListItem button component={Link} to='/gita/'>
+                                <ListItemText primary='Home'/>
+                            </ListItem>
+                            <Divider />
+
+                            <ListItem button component={Link} to='/gita/about'>
+                                <ListItemText primary='About'/>
+                            </ListItem>
+                            <Divider />
+
+                            <ListItem button component={Link} to='/gita/source'>
+                                <ListItemText primary='Source'/>
+                            </ListItem>
+                            <Divider />
+                        </List>                        
+                    </div>
+                    </Drawer>
+            </header>
+        );
+    }
 };
 
 export default Navbar;
