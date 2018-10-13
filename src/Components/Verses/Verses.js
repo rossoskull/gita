@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Chapter from '../Chapter/Chapter';
 import { Divider, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails, Typography } from '@material-ui/core';
 import { ExpandMore } from '@material-ui/icons';
 
@@ -6,12 +7,12 @@ class Verses extends Component {
 
     state = {
         verses: null,
-        chapter: null,
-        expanded: ''
+        chapter: {}
     }
 
     render() {
 
+        // Styles
         const styles = {
             hr: {
                 backgroundColor: 'rgba(255,255,255,0.5)',
@@ -27,14 +28,17 @@ class Verses extends Component {
             }
         }
 
-        const { ch, acc_token} = this.props;
+        // Props
+        const { chapters, ch, acc_token} = this.props;
 
-        if ( this.state.chapter !== this.props.chapters[ch] ) {
+        // Set the chapter state to current chapter
+        if ( this.state.chapter !== chapters[ch-1] ) {
             this.setState({
-                chapter: this.props.chapters[ch]
+                chapter: chapters[ch-1]
             })
         }
 
+        // Retrieve the verses for the current chapter
         if ( this.state.verses == null ) {
             const baseUrl = 'https://bhagavadgita.io/api/v1/';
             const url = `${baseUrl}chapters/${ch}/verses?access_token=${acc_token}`;
@@ -102,6 +106,9 @@ class Verses extends Component {
 
         return(
             <div>
+                { this.state.chapter === this.props.chapters[ch-1] && (
+                    <Chapter chapter={this.state.chapter} />
+                )}
                 {this.state.verses}
             </div>                     
         );
