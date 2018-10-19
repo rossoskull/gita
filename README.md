@@ -21,3 +21,4 @@ $ npm start
 ```sh
 $ npm run build
 ```
+#### You can view the app at `http://localhost:3000`
