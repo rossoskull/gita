@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import './Home.css';
 import { Card, CardContent, CardActionArea, Grid, Typography } from '@material-ui/core'
 import { Link } from 'react-router-dom';
 
 const Home = ({chapters}) => {
+
+    const styles = {
+        hr: {
+            width: '80%',
+            margin: '20px auto',
+            height: '1px',
+            border: '0',
+            background: 'linear-gradient(to right, white, #333, white)'
+        },
+    }
+
 
     const ChData = chapters.map((chapter) => {
         return(
@@ -53,9 +64,16 @@ const Home = ({chapters}) => {
     });
 
     return(
-        <Grid container spacing={16}>
-            {ChData}
-        </Grid>
+        <Fragment>
+            <Typography variant='display3' align='center'>
+                Chapters
+            </Typography>
+            <hr style={styles.hr} />
+
+            <Grid container spacing={16}>
+                {ChData}
+            </Grid>
+        </Fragment>
     );
 }
 
