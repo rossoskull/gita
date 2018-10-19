@@ -46,8 +46,8 @@ class Navbar extends Component {
                         <IconButton id='burger' onClick={this.handleDrawerOpen}>
                             <Menu style={{color: 'white'}} />
                         </IconButton>
-                        <Typography component={Link} to='/gita' variant='headline' color='inherit'>
-                            Bhagvada Gita App
+                        <Typography id='title-image' component={Link} to='/gita' variant='headline' color='inherit'>
+                            <img alt='Bhagavada Gita' src={require('./bg.png')} height='60px'/>
                         </Typography>
                         {menuItems}
                     </Toolbar>
