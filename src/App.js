@@ -6,6 +6,7 @@ import Loader from './Components/Loader/Loader';
 import Verses from './Components/Verses/Verses';
 import Footer from './Components/Footer/Footer';
 import About from './Components/About/About';
+import Source from './Components/Source/Source';
 
 class App extends Component {
   constructor(props) {
@@ -80,7 +81,7 @@ class App extends Component {
           <main className='container'>
             <Route exact path='/gita/' render={(props) => <Home {...props} updatePage={this.updatePage} chapters={this.state.chapters} currentPage={this.state.currentPage}/>} />
             <Route exact path='/gita/about' render={(props) => <About />} />
-            <Route exact path='/gita/source' render={(props) => <h2>Sources</h2>} />
+            <Route exact path='/gita/source' render={(props) => <Source />} />
             <Route exact path='/gita/verses/:ch' render={(props) => <Verses {...props} chapters={this.state.chapters} ch={props.match.params.ch} acc_token={this.state.acc_token}/>} />
           </main>
           {this.state.chapters.length === 0 && (<Loader type='circle' />)}
