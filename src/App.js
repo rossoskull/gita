@@ -4,6 +4,7 @@ import Navbar from './Components/Navbar/Navbar';
 import Home from './Components/Home/Home';
 import Loader from './Components/Loader/Loader';
 import Verses from './Components/Verses/Verses';
+import Footer from './Components/Footer/Footer';
 
 class App extends Component {
   constructor(props) {
@@ -82,6 +83,7 @@ class App extends Component {
             <Route exact path='/gita/verses/:ch' render={(props) => <Verses {...props} chapters={this.state.chapters} ch={props.match.params.ch} acc_token={this.state.acc_token}/>} />
           </main>
           <Loader nChapters={this.state.chapters.length} />
+          <Footer />
         </div>
       </BrowserRouter>
     );
