@@ -5,12 +5,16 @@ You can visit the app [here](https://rossoskull.me/gita)
 This is a ReactJS app, which uses the [bhagavadgita.io API](https://bhagavadgita.io/api/).
 
 ### Running on your local system
+#### Clone the repository
+```sh
+$ git clone https://github.com/rossoskull/gita.git
+```
 #### Installing & setting up
-``` sh
+```sh
 $ npm install
 ```
 #### Running the app
-``` sh
+```sh
 $ npm start
 ```
 #### Building the app
