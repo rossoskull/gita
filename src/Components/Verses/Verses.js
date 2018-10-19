@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import Chapter from '../Chapter/Chapter';
 import { Divider, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails, Typography } from '@material-ui/core';
 import { ExpandMore } from '@material-ui/icons';
+import Loader from '../Loader/Loader';
 
 class Verses extends Component {
 
     state = {
         verses: null,
-        chapter: {}
+        chapter: {},
+        loading: true,
     }
 
     render() {
@@ -34,7 +36,8 @@ class Verses extends Component {
         // Set the chapter state to current chapter
         if ( this.state.chapter !== chapters[ch-1] ) {
             this.setState({
-                chapter: chapters[ch-1]
+                chapter: chapters[ch-1],
+                loading: true,
             })
         }
 
@@ -93,7 +96,7 @@ class Verses extends Component {
                                 </ExpansionPanel>
                             );
                         });
-                        this.setState({ verses: versesData });
+                        this.setState({ loading: false, verses: versesData });
                     });
                 } else {
                     console.log('Error in retrieving verses');
@@ -110,6 +113,7 @@ class Verses extends Component {
                     <Chapter chapter={this.state.chapter} />
                 )}
                 {this.state.verses}
+                {this.state.loading && (<Loader type='bar'/>)}
             </div>                     
         );
     }

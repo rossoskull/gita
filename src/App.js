@@ -82,7 +82,7 @@ class App extends Component {
             <Route exact path='/gita/source' render={(props) => <h2>Sources</h2>} />
             <Route exact path='/gita/verses/:ch' render={(props) => <Verses {...props} chapters={this.state.chapters} ch={props.match.params.ch} acc_token={this.state.acc_token}/>} />
           </main>
-          <Loader nChapters={this.state.chapters.length} />
+          {this.state.chapters.length === 0 && (<Loader type='circle' />)}
           <Footer />
         </div>
       </BrowserRouter>

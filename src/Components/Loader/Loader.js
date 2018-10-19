@@ -1,7 +1,7 @@
 import React from 'react';
-import { CircularProgress} from '@material-ui/core'
+import { CircularProgress, LinearProgress } from '@material-ui/core'
 
-const Loader = ({nChapters}) => {
+const Loader = ({type}) => {
     const preloaderStyle = {
         backgroundColor: 'rgba(0,0,0,0)',
         margin: '24% 45%',
@@ -10,8 +10,10 @@ const Loader = ({nChapters}) => {
 
     return(
         <div className="container">
-            {(nChapters===0) && (
+            {( type==='circle' ) ? (
                 <CircularProgress size={65} style={preloaderStyle} />
+            ) : (
+                <LinearProgress />
             )}
         </div>
     );
