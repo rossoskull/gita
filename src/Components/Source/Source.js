@@ -35,8 +35,9 @@ const Source = () => {
 			<Typography style={styles.p}>
 
 				For developing the frontend aspect of this site, I used the <a
-				href='https://reactjs.org/'>ReactJS</a> library.<br /><br />
-				You can view the source code <a
+				target='_blank' href='https://reactjs.org/'>ReactJS</a>
+				library.<br /><br /> You can view the source code <a
+				target='_blank'
 				href='https://github.com/rossoskull/gita'>here</a>.
 			
 			</Typography>
@@ -48,11 +49,12 @@ const Source = () => {
 			<Typography style={styles.p}>
 
 				The server side script is built using <a
-				href='https://expressjs.com/'>ExpressJS</a> framework, on the 
-				<a href='https://nodejs.org/'>Node.js</a> runtime. It is
-				required to get the access token for using the API.<br /><br
-				/> You can view the source code <a
-				href='https://github.com/rossoskull/gita-backend'>here</a>.
+				href='https://expressjs.com/'>ExpressJS</a> framework, on the
+				<a target='_blank' href='https://nodejs.org/'>Node.js</a>
+				runtime. It is required to get the access token for using the
+				API.<br /><br /> You can view the source code <a
+				target='_blank' href='https://github.com/rossoskull/gita-
+				backend'>here</a>.
 
 			</Typography>
 
@@ -65,9 +67,10 @@ const Source = () => {
 				A very special thanks to <a
 				href='https://bhagavadgita.io/'>bhagavadgita.io</a> for
 				providing a very good and easy-to-use API. You can find more
-				details about using this API <a
-				href='https://bhagavadgita.io/api/'>here</a>.<br /><br />You can
-				learn more about APIs <a href='https://en.wikipedia.org/wiki/A
+				details about using this API <a target='_blank'
+				href='https://bhagavadgita.io/api/'>here</a>.<br /><br />You
+				can learn more about APIs <a target='_blank'
+				href='https://en.wikipedia.org/wiki/A
 				pplication_programming_interface'>here</a>.
 			
 			</Typography>

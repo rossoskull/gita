@@ -48,7 +48,8 @@ const About = () => {
 			The knowledge that is present in Bhagavada Gita should be made
 			easily available for everyone to read. No one actually owns the
 			content of this book, so as per me, it should be available for
-			free. So I created this website.
+			free. And so it is available at many platforms, in various ways; I
+			too created this website to contribute to that.
 
 			</Typography>
 
@@ -63,7 +64,7 @@ const About = () => {
 				developing, reading, listening to some great music and forming
 				bonds with people. Currently, I am working with technologies
 				like ReactJS and Node.js. I have experience in developing
-				VueJS, Django and PHP apps. To know more about me, you reach
+				VueJS, Django and PHP apps. To know more about me, you can reach
 				out to me on any of my social handles! 
 			
 			</Typography>
