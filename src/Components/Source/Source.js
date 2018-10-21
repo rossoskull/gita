@@ -53,8 +53,7 @@ const Source = () => {
 				<a target='_blank' href='https://nodejs.org/'>Node.js</a>
 				runtime. It is required to get the access token for using the
 				API.<br /><br /> You can view the source code <a
-				target='_blank' href='https://github.com/rossoskull/gita-
-				backend'>here</a>.
+				target='_blank' href='https://github.com/rossoskull/gita-backend'>here</a>.
 
 			</Typography>
 
