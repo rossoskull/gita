@@ -35,7 +35,7 @@ const Source = () => {
 			<Typography style={styles.p}>
 
 				For developing the frontend aspect of this site, I used the <a
-				target='_blank' href='https://reactjs.org/'>ReactJS</a>
+				target='_blank' href='https://reactjs.org/'>ReactJS </a> 
 				library.<br /><br /> You can view the source code <a
 				target='_blank'
 				href='https://github.com/rossoskull/gita'>here</a>.
