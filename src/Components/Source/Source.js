@@ -29,6 +29,21 @@ const Source = () => {
 			<hr style={styles.hr} />
 
 			<Typography style={styles.d1} variant='display1'>
+				Logo and Favicon design
+			</Typography>
+
+			<Typography style={styles.p}>
+
+				The logo and favicon has been designed by <b>Pranay Agarwal</b>.<br /><br /> You
+				can check out his <a target='_blank'
+				href='https://www.dribbble.com/PranayAgarwal'>Dribbble</a>, <a href='https://www.instagram.com/py_ag'
+				target='_blank'>Instagram</a> and <a
+				href='https://www.linkedin.com/in/pranay-agarwal-02845b8a'
+				target='_blank'>LinkedIn</a> profiles to know more!
+			
+			</Typography>
+
+			<Typography style={styles.d1} variant='display1'>
 				Frontend Library
 			</Typography>
 
@@ -50,7 +65,7 @@ const Source = () => {
 
 				The server side script is built using <a
 				href='https://expressjs.com/'>ExpressJS</a> framework, on the
-				<a target='_blank' href='https://nodejs.org/'>Node.js</a>
+				<a target='_blank' href='https://nodejs.org/'> Node.js </a>
 				runtime. It is required to get the access token for using the
 				API.<br /><br /> You can view the source code <a
 				target='_blank' href='https://github.com/rossoskull/gita-backend'>here</a>.
