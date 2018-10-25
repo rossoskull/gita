@@ -24,15 +24,17 @@
     	margin: 0 auto;
     }
 
-    #title-image img {
-		height: 50px;
-	}
-
     #menuItems {
         display: none;
     }
     
     .appbar-img {
-    	height: 15px;
+    	height: 40px;
+    }
+}
+
+@media screen and (max-width: 369px ) {
+    .appbar-img {
+        height: 30px;
     }
 }

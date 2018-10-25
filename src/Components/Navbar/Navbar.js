@@ -40,7 +40,7 @@ class Navbar extends Component {
                     style={{
                         backgroundColor: '#2196f3',
                         marginBottom: '20px',
-                        padding: '5px 5px 0px'
+                        padding: '5px 0px 0px'
                     }}
                     >
                     <Toolbar>
