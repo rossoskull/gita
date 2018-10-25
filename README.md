@@ -22,3 +22,7 @@ $ npm start
 $ npm run build
 ```
 #### You can view the app at `http://localhost:3000`
+
+### Logo credits
+The logo and favicon are designed by **Pranay Agarwal**.  
+You can learn more about him at his [Dribbble](https://dribbble.com/PranayAgarwal), [LinkedIn](https://www.linkedin.com/in/py-ag/) & [Instagram](https://www.instagram.com/py_ag/) profiles.
