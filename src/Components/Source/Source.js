@@ -38,7 +38,7 @@ const Source = () => {
 				can check out his <a target='_blank'
 				href='https://www.dribbble.com/PranayAgarwal'>Dribbble</a>, <a href='https://www.instagram.com/py_ag'
 				target='_blank'>Instagram</a> and <a
-				href='https://www.linkedin.com/in/pranay-agarwal-02845b8a'
+				href='https://www.linkedin.com/in/py-ag'
 				target='_blank'>LinkedIn</a> profiles to know more!
 			
 			</Typography>
