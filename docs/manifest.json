@@ -1,0 +1,13 @@
+{
+  "short_name": "Bhagavada Gita",
+  "name": "Bhagavada Gita App by Jay Mistry",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "sizes": "32x32 16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

@@ -39,15 +39,17 @@ class Navbar extends Component {
                     position='sticky'
                     style={{
                         backgroundColor: '#2196f3',
-                        marginBottom: '20px'
+                        marginBottom: '20px',
+                        padding: '5px 5px 0px'
                     }}
                     >
                     <Toolbar>
                         <IconButton id='burger' onClick={this.handleDrawerOpen}>
                             <Menu style={{color: 'white'}} />
                         </IconButton>
-                        <Typography id='title-image' component={Link} to='/gita' variant='headline' color='inherit'>
-                            <img alt='Bhagavada Gita' src={require('./bg.png')} height='60px'/>
+                        <Typography id='title-image' component={Link} to='/gita' color='inherit'>
+                        	<img alt='Peackock Feather' className='appbar-img' src={require('./64_64.png')}/>
+                            <img alt='Bhagavada Gita' className='appbar-img' src={require('./bg.png')}/>
                         </Typography>
                         {menuItems}
                     </Toolbar>
