@@ -17,7 +17,7 @@ class App extends Component {
       currentPage: '',
       verses: [],
     }
-    const url = 'http://gita-backend.glitch.me/get_token';
+    const url = 'https://gita-backend.glitch.me/get_token';
     const options = {
       mode: 'cors',
     }
